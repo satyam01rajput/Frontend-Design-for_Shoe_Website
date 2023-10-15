@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike - Just Do It</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="image/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        ::-webkit-scrollbar {
+            width: 15px;
+        }
+
+        ::-webkit-scrollbar-track {
+            border-radius: 5px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.25);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            border-radius: 5px;
+            background: linear-gradient(to top, #474145, #e40606);
+        }
+
+        section {
+            width: 100%;
+            height: 100vh;
+            background-image: url(joseph-barrientos-4qSb_FWhHKs-unsplash.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        section nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+            background: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+        }
+
+        section nav .logo {
+            font-size: 35px;
+            color: #000000;
+            margin: 5px 0;
+            cursor: pointer;
+            position: relative;
+            left: -4%;
+        }
+
+        section nav .logo span {
+            color: #6c14d0;
+            text-decoration: underline;
+        }
+
+        section nav ul {
+            list-style: none;
+        }
+
+        section nav ul li {
+            display: inline-block;
+            margin: 5px 15px;
+        }
+
+        section nav ul li a {
+            text-decoration: none;
+            color: black;
+            transition: 0.2s;
+        }
+
+        section nav ul li a:hover {
+            color: #c72092;
+        }
+
+        section nav .icons i {
+            margin: 0 4px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        section nav .icons i:hover {
+            color: #c72092;
+        }
+
+        section .main .main_content {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        section .main .main_content .main_text h1 {
+            font-size: 90px;
+            line-height: 70px;
+            font-family: pyxidium quick;
+            background: linear-gradient(to right, #c72092, #6c14d0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            top: 45px;
+            left: 5%;
+        }
+
+        section .main .main_content .main_text h1 span {
+            font-size: 70px;
+            background: linear-gradient(to right, #c72092, #6c14d0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        section .main .main_content .main_text p {
+            width: 600px;
+            text-align: justify;
+            line-height: 21px;
+            position: relative;
+            top: 85px;
+            left: 5%;
+        }
+
+        section .main .main_content .main_image img {
+            width: 650px;
+            position: relative;
+            left: 20px;
+            top: 75px;
+        }
+
+        section .main .social_icon {
+            position: absolute;
+            top: 50%;
+            left: 98%;
+            transform: translate(-50%, -50%);
+            font-size: 19px;
+        }
+
+        section .main .social_icon i {
+            margin: 8px 0;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        section .main .social_icon i:hover {
+            color: #f20808;
+        }
+
+        section .main .button {
+            position: absolute;
+            left: 6%;
+            padding: 10px 20px;
+            border-radius: 30px;
+            background: linear-gradient(to right, #c72092, #6c14d0);
+        }
+
+        section .main .button a {
+            color: white;
+            text-decoration: none;
+        }
+
+        section .main .button i {
+            color: white;
+            margin-left: 5px;
+            transition: 0.3s;
+        }
+
+        section .main .button:hover i {
+            transform: translateX(6px);
+        }
+
+        .products {
+            width: 100%;
+            height: 140vh;
+            padding: 25px 0;
+            margin-left: 0px;
+            margin-top: 90px;
+        }
+
+        .products h1 {
+            margin: 35px 0;
+            font-size: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #c72092, #6c14d0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .products .box {
+            width: 90%;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-gap: 25px 0;
+        }
+
+        .products .box .card {
+            width: 290px;
+            height: 440px;
+            box-shadow: 0 0 8px #6c14d0;
+            border-radius: 5px;
+            text-align: center;
+            padding: 10px 20px;
+            background: #f6f6f6;
+        }
+
+        .products .box .card .small_card {
+            display: flex;
+            flex-flow: column;
+            position: absolute;
+            margin: 10px 0;
+            transform: translateX(-20px);
+            transition: 0.3s;
+            opacity: 0;
+        }
+
+        .products .box .card:hover .small_card {
+            transform: translateX(2px);
+            cursor: pointer;
+            opacity: 1;
+        }
+
+        .products .box .card .image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .products .box .card .image img {
+            width: 150px;
+            margin: 15px 0;
+            transition: 0.3s;
+        }
+
+        .products .box .card:hover .image img {
+            transform: scale(1.1);
+        }
+
+        .products .box .card .small_card i {
+            width: 45px;
+            height: 45px;
+            border-radius: 5px;
+            font-size: 18px;
+            margin: 2px 0;
+            line-height: 40px;
+            border: 2px solid #999999;
+            transition: 0.2s;
+        }
+
+        .products .box .card .small_card i:hover {
+            color: #c72092;
+        }
+
+        .products .box .card .products_text h2 {
+            font-size: 30px;
+            margin-top: 15px;
+        }
+
+        .products .box .card .products_text p {
+            color: #91919191;
+            line-height: 21px;
+            margin: 8px 0;
+        }
+
+        .products .box .card .products_text h3 {
+            margin: 7px 0;
+        }
+
+        .products .box .card .products_text .products_star {
+            color: orange;
+            margin-bottom: 19px;
+            cursor: pointer;
+        }
+
+        .products .box .card .products_text .btn {
+            text-decoration: none;
+            padding: 10px 20px;
+            background: linear-gradient(to right, #c72092, #6c14d0);
+            color: white;
+
+        }
+
+        .feedbac {
+            width: 100vh;
+            height: 800px;
+            margin-top: 300px;
+        }
+
+
+        h3 {
+
+            margin-left: 400px;
+        }
+
+        .inner {
+            width: 300px;
+            height: 200px;
+            border: 1px solid black;
+            margin-left: 40px;
+
+
+
+        }
+
+       .box11  div{
+        display: inline;
+        
+
+       }
+    </style>
+
+</head>
+
+<body>
+
+    <section>
+        <nav>
+            <div class="logo">
+                <h1>Shoe<span>Adda's</span></h1>
+            </div>
+
+            <ul>
+                <li><a href="#Home">Home</a></li>
+                <li><a href="#Products">Products</a></li>
+                <li><a href="#About">About</a></li>
+                <li><a href="#Review">Review</a></li>
+                <li><a href="#Servises">Servises</a></li>
+            </ul>
+
+            <div class="icons">
+                <i class="fa-solid fa-heart"></i>
+                <i class="fa-solid fa-cart-shopping"></i>
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+        </nav>
+
+        <div class="main" id="Home">
+            <div class="main_content">
+                <div class="main_text">
+                    <h1>NIKE<br><span>Collection</span></h1>
+                    <p>
+                        Nike shoes have been a favorite for sneaker enthusiasts for decades. With their sleek designs,
+                        comfortable fit, and cutting-edge technology, Nike shoes have become a staple in the fashion
+                        world. It's no wonder why people love to show off their new kicks on social media, especially on
+                        Instagram. But sometimes, finding the right caption to go with your Nike shoe picture can be
+                        challenging.
+                    </p>
+                </div>
+                <div class="main_image">
+                    <img src="image/shoes6.png">
+                </div>
+            </div>
+            <div class="social_icon">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-linkedin-in"></i>
+            </div>
+            <div class="button">
+                <a href="#">SHOP NOW</a>
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+
+        </div>
+
+
+
+
+    </section>
+
+    <!--Products-->
+
+    <div class="products" id="Products">
+        <h1>Products</h1>
+
+        <div class="box">
+            <div class="card">
+
+                <div class="small_card">
+                    <i class="fa-solid fa-heart"></i>
+                    <i class="fa-solid fa-share"></i>
+                </div>
+
+                <div class="image">
+                    <img src="image/shoes1.png">
+                </div>
+
+                <div class="products_text">
+                    <h2>NIKE</h2>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    </p>
+                    <h3>₹4533</h3>
+                    <div class="products_star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <a href="#" class="btn">Add To Cart</a>
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <div class="small_card">
+                    <i class="fa-solid fa-heart"></i>
+                    <i class="fa-solid fa-share"></i>
+                </div>
+
+                <div class="image">
+                    <img src="image/shoes2.png">
+                </div>
+
+                <div class="products_text">
+                    <h2>NIKE</h2>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    </p>
+                    <h3>₹4299</h3>
+                    <div class="products_star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <a href="#" class="btn">Add To Cart</a>
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <div class="small_card">
+                    <i class="fa-solid fa-heart"></i>
+                    <i class="fa-solid fa-share"></i>
+                </div>
+
+                <div class="image">
+                    <img src="image/shoes3.png">
+                </div>
+
+                <div class="products_text">
+                    <h2>NIKE</h2>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    </p>
+                    <h3>₹1400</h3>
+                    <div class="products_star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <a href="#" class="btn">Add To Cart</a>
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <div class="small_card">
+                    <i class="fa-solid fa-heart"></i>
+                    <i class="fa-solid fa-share"></i>
+                </div>
+
+                <div class="image">
+                    <img src="image/shoes4.png">
+                </div>
+
+                <div class="products_text">
+                    <h2>NIKE</h2>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    </p>
+                    <h3>₹1599</h3>
+                    <div class="products_star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <a href="#" class="btn">Add To Cart</a>
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <div class="small_card">
+                    <i class="fa-solid fa-heart"></i>
+                    <i class="fa-solid fa-share"></i>
+                </div>
+
+                <div class="image">
+                    <img src="image/shoes5.png">
+                </div>
+
+                <div class="products_text">
+                    <h2>NIKE</h2>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    </p>
+                    <h3>₹1200</h3>
+                    <div class="products_star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <a href="#" class="btn">Add To Cart</a>
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <div class="small_card">
+                    <i class="fa-solid fa-heart"></i>
+                    <i class="fa-solid fa-share"></i>
+                </div>
+
+                <div class="image">
+                    <img src="image/shoes6.png">
+                </div>
+
+                <div class="products_text">
+                    <h2>NIKE</h2>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    </p>
+                    <h3>₹1499</h3>
+                    <div class="products_star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star-half-stroke"></i>
+                    </div>
+                    <a href="#" class="btn">Add To Cart</a>
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <div class="small_card">
+                    <i class="fa-solid fa-heart"></i>
+                    <i class="fa-solid fa-share"></i>
+                </div>
+
+                <div class="image">
+                    <img src="image/shoes.png">
+                </div>
+
+                <div class="products_text">
+                    <h2>NIKE</h2>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    </p>
+                    <h3>₹1299</h3>
+                    <div class="products_star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <a href="#" class="btn">Add To Cart</a>
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <div class="small_card">
+                    <i class="fa-solid fa-heart"></i>
+                    <i class="fa-solid fa-share"></i>
+                </div>
+
+                <div class="image">
+                    <img src="image/shoes7.png">
+                </div>
+
+                <div class="products_text">
+                    <h2>NIKE</h2>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    </p>
+                    <h3>₹1299</h3>
+                    <div class="products_star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star-half-stroke"></i>
+                    </div>
+                    <a href="#" class="btn">Add To Cart</a>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- feedback form .html we have to cereate feed back -->
+    <div class="feedbac">
+
+        <h3>Customer "Feedback"</h3>
+
+
+        <div class="box11">
+
+            <div class="inner">
+                jhcjhd  lorem100
+
+            </div>
+            <div class="inner">
+                jhcjhdj
+
+            </div>
+            <div class="inner">
+                jhcjhdj
+
+            </div>
+            <div class="inner">
+                jhcjhdj
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
